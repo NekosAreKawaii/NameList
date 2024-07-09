@@ -59,7 +59,7 @@ def load_parts(parts: list):
         parts.append(line)
 
 def generate_part(parts: list, current_length: int, max_length: int) -> str:
-    part = 'a' * 100
+    part = 'a' * (max_length + 1)
     tries = 0
     while len(part) + current_length > max_length and tries < 10:
         part = parts[secrets.randbelow(len(parts))]
