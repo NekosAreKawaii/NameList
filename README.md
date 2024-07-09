@@ -11,7 +11,13 @@ Our aim is to provide a comprehensive database of usernames for various purposes
 You can browse the collection of usernames and parts of usernames available in this repository.
 
 ## Example
+
+### JS
+
+* [HTML Generator](https://repo.julias.zone/fun/username/), [view-source](view-source:https://repo.julias.zone/fun/username/)
+
 ### Java
+
 ```java
     private static final List<String> USERNAME_PARTS = new ArrayList<>();
     private static final int MAX_USERNAME_LENGTH = 16;
