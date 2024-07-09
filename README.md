@@ -44,6 +44,44 @@ You can browse the collection of usernames and parts of usernames available in t
         return username;
     }
 ```
+### Python
+```python
+import requests
+import secrets
+
+URL = 'https://raw.githubusercontent.com/NekosAreKawaii/NameList/main/usernames'
+
+def load_parts(parts: list):
+    req = requests.get(URL)
+    for line in req.text.split("\n"):
+        if line == '':
+            continue
+        parts.append(line)
+
+def generate_part(parts: list, current_length: int, max_length: int) -> str:
+    part = 'a' * (max_length + 1)
+    tries = 0
+    while len(part) + current_length > max_length and tries < 10:
+        part = parts[secrets.randbelow(len(parts))]
+        tries += 1
+    return part
+
+def generate_name(parts: list, max_length=16) -> str:
+    name = ''
+    while len(name) < max_length:
+        part = generate_part(parts, len(name), max_length)
+        name += part
+    if len(name) > max_length:
+        name = name[:max_length]
+    return name
+
+if __name__ == "__main__":
+    parts = []
+    load_parts(parts)
+    for _ in range(5):
+        print(generate_name(parts))
+
+```
 
 ## Contributing
 
