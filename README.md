@@ -71,6 +71,8 @@ def generate_name(parts: list, max_length=16) -> str:
     while len(name) < max_length:
         part = generate_part(parts, len(name), max_length)
         name += part
+    if len(name) > max_length:
+        name = name[:max_length]
     return name
 
 if __name__ == "__main__":
