@@ -12,10 +12,6 @@ You can browse the collection of usernames and parts of usernames available in t
 
 ## Example
 
-### JS
-
-* [HTML Generator](https://repo.julias.zone/fun/username/)
-
 ### Java
 ```java
     private static final List<String> USERNAME_PARTS = new ArrayList<>();
@@ -87,6 +83,9 @@ if __name__ == "__main__":
         print(generate_name(parts))
 
 ```
+
+### Java Script
+[HTML Generator](https://repo.julias.zone/fun/username/)
 
 ## Contributing
 
