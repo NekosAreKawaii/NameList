@@ -15,5 +15,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run a one-line script
+      - name: Check for duplicates
         run: sudo bash $GITHUB_WORKSPACE/checkduplicates.sh
