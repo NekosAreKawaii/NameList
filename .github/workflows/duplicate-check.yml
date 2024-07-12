@@ -2,9 +2,15 @@ name: Duplicate check
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - '*'
+    paths:
+      - 'usernames'
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - '*'
+    paths:
+      - 'usernames'
 
   workflow_dispatch:
 
