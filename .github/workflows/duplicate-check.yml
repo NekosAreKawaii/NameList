@@ -1,0 +1,25 @@
+name: Duplicate check
+
+on:
+  push:
+    branches:
+      - '*'
+    paths:
+      - 'usernames'
+  pull_request:
+    branches:
+      - '*'
+    paths:
+      - 'usernames'
+
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for duplicates
+        run: sudo bash $GITHUB_WORKSPACE/checkduplicates.sh
