@@ -1,14 +1,21 @@
 #!/bin/bash
 
-# Pfade zur Datei "usernames" anpassen
 FILE_PATH="usernames"
 
-# Überprüfe, ob doppelte Zeilen vorhanden sind
-DUPLICATE_LINES=$(sort -f "$FILE_PATH" | uniq -id)
+EXCLUSION_LIST=("xX" "Xx")
 
-if [ "$DUPLICATE_LINES" ]; then
-    echo "##### Duplicates discovered! #####"
-    echo "$DUPLICATE_LINES"
+DUPLICATE_LINES=$(sort "$FILE_PATH" | uniq -d)
+
+# loop through the duplicates and remove them 
+FILTERED_DUPLICATES=""
+for DUPLICATE in $DUPLICATE_LINES; do
+    if [[ ! " ${EXCLUSION_LIST[@]} " =~ " $DUPLICATE " ]]; then
+        FILTERED_DUPLICATES="$FILTERED_DUPLICATES$DUPLICATE\n"
+    fi
+done
+
+if [ "$FILTERED_DUPLICATES" ]; then
+    echo -e "##### Duplicates discovered! #####\n$FILTERED_DUPLICATES"
     exit 1
 else
     echo "No duplicates."
