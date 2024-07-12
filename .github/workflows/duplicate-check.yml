@@ -16,4 +16,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run a one-line script
-        run: $GITHUB_WORKSPACE/check-usernames.sh
+        run: $GITHUB_WORKSPACE/checkduplicates.sh
