@@ -112,7 +112,7 @@ We will review your request and take the appropriate action to remove the userna
 
 ## Issues and Feedback
 
-If you encounter any issues or have suggestions for improving this repository, please open an issue in the Issues tab of this repository.
+If you encounter any issues or have suggestions for improving this repository, please open an issue in the Issues tab of this repository or create a pull request.
 <br>
 We appreciate your feedback and are always looking to improve.
 
